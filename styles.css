@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(to right, #1f1c2c, #928dab);
+  color: #fff;
+  user-select: none;
+}
+
+.main {
+  display: flex;
+  gap: 120px;
+  align-items: center;
+}
+
+.left {
+  text-align: center;
+}
+
+.left h3 {
+  font-size: 20px;
+  margin-bottom: 40px;
+  background-color: #222;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #00f0ff;
+}
+
+.gem-image {
+  width: 250px;
+  transition: all 0.2s ease;
+  filter: drop-shadow(0 0 12px cyan);
+}
+
+.gem-image:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.gem-image:active {
+  transform: scale(1.1);
+  opacity: 0.7;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.upgrade {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 360px;
+  height: 90px;
+  padding: 15px 20px;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #3a3a3a, #2d2d2d);
+  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.2);
+  transition: all 0.2s ease;
+  position: relative;
+  border: 2px solid #00ffe1;
+}
+
+.upgrade:hover {
+  background: linear-gradient(145deg, #4a4a4a, #363636);
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.upgrade-image {
+  width: 60px;
+  filter: drop-shadow(0 0 5px #0ff);
+}
+
+.mid-section {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.mid-section h4 {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.cost-info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+}
+
+.gem-img {
+  width: 18px;
+  height: 18px;
+}
+
+.right-section {
+  font-size: 12px;
+  text-align: right;
+}
+
+.next-level-info {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  margin-left: 15px;
+  background-color: #000000cc;
+  border-radius: 10px;
+  padding: 10px;
+  width: 140px;
+  text-align: center;
+  font-size: 12px;
+  color: #00ffee;
+  display: none;
+  box-shadow: 0 0 10px #00ffe1;
+}
+
+.upgrade:hover .next-level-info {
+  display: block;
+} 
+
