@@ -136,7 +136,7 @@ section {
   right: -160px; 
 }
 
-.reset-button {
+/* .reset-button {
   margin-top: 23px;
   font-size: 15px;
   padding: 8px 15px;
@@ -150,7 +150,7 @@ section {
 .reset-button:hover {
   border-color: #fff;
   background-color: #333;
-}
+} */
 .gem-img {
   width: 18px;
   height: 18px;
