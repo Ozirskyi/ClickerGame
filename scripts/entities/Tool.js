@@ -10,13 +10,16 @@ export class Tool {
 
   getIncreasePerTick() {
     switch (this.name.toUpperCase()) {
-      case "CLICKER": return CONFIG.CLICKER_INCREASE_FACTOR + this.level;
-      case "PICKAXE": return CONFIG.PICKAXE_INCREASE_FACTOR * this.level;
-      case "DRILL": return CONFIG.DRILL_INCREASE_FACTOR * this.level;
-      default: return 1;
+      case "CLICKER": 
+        return CONFIG.CLICKER_INCREASE_FACTOR + this.level;
+      case "PICKAXE": 
+        return CONFIG.PICKAXE_INCREASE_FACTOR * this.level;
+      case "DRILL": 
+        return CONFIG.DRILL_INCREASE_FACTOR * this.level;
+      default: 
+        return 1;
     }
-}
-
+  }
 
   getCost() {
     const initialCost = CONFIG[`${this.name.toUpperCase()}_INITIAL_COST`] || 10;

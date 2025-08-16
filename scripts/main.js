@@ -1,14 +1,13 @@
-import { ManualTool } from "./entities/ManualTool.js";
-import { AutoTool } from "./entities/AutoTool.js";
+import { Tool } from "./entities/Tool.js";
 import { CONFIG } from "./config.js";
 
 class ClickerGame {
   constructor() {
     this.gems = 0;
 
-    this.clicker = new ManualTool("clicker");
-    this.pickaxe = new AutoTool("pickaxe");
-    this.drill = new AutoTool("drill");
+    this.clicker = new Tool("clicker");
+    this.pickaxe = new Tool("pickaxe");
+    this.drill = new Tool("drill");
 
     this.tools = [this.clicker, this.pickaxe, this.drill];
     this.gemElem = document.querySelector(".gem-cost");
@@ -27,7 +26,7 @@ class ClickerGame {
   }
 
   incrementGem() {
-    this.gems += this.clicker.incrementForClick();
+    this.gems += this.clicker.increasePerTick;
     this.updateDisplay();
   }
 
@@ -40,8 +39,8 @@ class ClickerGame {
 
   generateGems() {
     this.tools.forEach(tool => {
-      if (tool instanceof AutoTool) {
-        this.gems += tool.tick();
+      if (tool.name !== "clicker") {
+        this.gems += tool.increasePerTick;
       }
     });
     this.updateDisplay();
