@@ -3,7 +3,7 @@ import { CONFIG } from "./config.js";
 
 class ClickerGame {
   constructor() {
-    this.gems = 0;
+    this.gems = CONFIG.STARTING_GEM_FACTOR;
 
     this.clicker = new Tool("clicker");
     this.pickaxe = new Tool("pickaxe");
