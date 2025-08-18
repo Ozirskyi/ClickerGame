@@ -10,5 +10,7 @@ export const CONFIG = {
   DRILL_INCREASE_FACTOR: 12,
 
   COST_GROWTH_FACTOR: 1.3,
-  AUTO_TICK_INTERVAL: 250
+  AUTO_TICK_INTERVAL: 250,
+
+  AUTO_GEM_TOOLS: ['pickaxe', 'drill']
 };
