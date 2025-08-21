@@ -7,12 +7,12 @@ export class Tool {
     this.increasePerTick = this.getIncreasePerTick();
     this.cost = this.getCost();
     this.game = game;
+    
+    this.levelElem = document.querySelector("." + this.name + "-level");
+    this.increaseElem = document.querySelector("." + this.name + "-increase");
+    this.costElem = document.querySelector("." + this.name + "-cost");
+    this.upgradeBtn = document.querySelector("." + this.name + "-upgrade");
 
-    this.levelElem = document.querySelector(`.${this.name}-level`);
-    this.increaseElem = document.querySelector(`.${this.name}-increase`);
-    this.costElem = document.querySelector(`.${this.name}-cost`);
-
-    this.upgradeBtn = document.querySelector(`.${this.name}-upgrade`);
     
     if (this.upgradeBtn) {
       this.upgradeBtn.addEventListener("click", () => this.game.buyTool(this));
@@ -25,7 +25,7 @@ export class Tool {
   }
 
   getIncreasePerTick() {
-    switch (`${this.name}`) {
+    switch (this.name) {
       case "clicker":
         return CONFIG.CLICKER_INCREASE_FACTOR + this.level;
       case "pickaxe":
@@ -38,9 +38,10 @@ export class Tool {
   }
 
   getCost() {
-    const initialCost = CONFIG[`${this.name.toUpperCase()}_INITIAL_COST`] || 10;
-    return Math.round(initialCost * Math.pow(CONFIG.COST_GROWTH_FACTOR, this.level));
-  }
+  const initialCost = CONFIG[this.name.toUpperCase() + "_INITIAL_COST"] || 10;
+  return Math.round(initialCost * Math.pow(CONFIG.COST_GROWTH_FACTOR, this.level));
+}
+
 
   levelUp() {
     const cost = this.getCost();
