@@ -50,10 +50,4 @@ export class Tool {
     this.cost = this.getCost();
     return cost;
   }
-
-  updateDisplay() {
-    this.levelElem.innerText = this.level;
-    this.increaseElem.innerText = this.increasePerTick;
-    this.costElem.innerText = this.cost;
-  }
 }

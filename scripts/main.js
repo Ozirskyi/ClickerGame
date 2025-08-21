@@ -37,8 +37,13 @@ class ClickerGame {
   }
 
   updateDisplay() {
-    this.gemElem.innerText = Math.floor(this.gems);
-    this.tools.forEach(tool => tool.updateDisplay());
+  this.gemElem.innerText = Math.floor(this.gems);
+
+  this.tools.forEach(tool => {
+    tool.levelElem.innerText = tool.level;
+    tool.costElem.innerText = tool.cost;
+    tool.increaseElem.innerText = tool.increasePerTick;
+  });
   }
 }
 
